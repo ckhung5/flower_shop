@@ -3,7 +3,7 @@
 describe 'intialize' do
 	it 'should create a tulip flower object with 12' do
 		expect(Tulips.new(12).order_number).to eq 12
-		expect(Tulips.code_name).to eq 'T58'
+		expect(Tulips.new(12).code_name).to eq 'T58'
 	end
 
 	describe '#calculate' do
