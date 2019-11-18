@@ -20,7 +20,7 @@ class Flower
 	def print_result
 		calculatd_result = calculate
 		if calculatd_result.nil?
-			puts "The #{code_name} has only #{order_number} which can not be a bundle"
+			puts "The #{code_name} has only #{order_number} which can not make as a bundle"
 		else
 			puts "#{order_number} #{code_name} $#{calculatd_result}"
 			records.each do |bundle_number, count|
