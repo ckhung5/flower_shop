@@ -18,9 +18,14 @@ class Flower
 	end
 
 	def print_result
-		puts "#{order_number} #{code_name} $#{calculate}"
-		records.each do |bundle_number, count|
-			puts "#{count} X #{bundle_number} $#{get_price(bundle_number)}"
+		calculatd_result = calculate
+		if calculatd_result.nil?
+			puts "The #{code_name} has only #{order_number} which can not be a bundle"
+		else
+			puts "#{order_number} #{code_name} $#{calculatd_result}"
+			records.each do |bundle_number, count|
+				puts "#{count} X #{bundle_number} $#{get_price(bundle_number)}"
+			end
 		end
 		puts "--------------------------------------------------------"
 	end
