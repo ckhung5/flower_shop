@@ -24,15 +24,15 @@ class Flower
 	def possible_combinations
 		bundles.sort.reverse.permutation(bundles.length).to_a.each do |permutation_array|
 			combinations = []
-			flowers = order_number
+			tmp_flower_counts = order_number
 
 			permutation_array.each do |number|
-				while flowers >= number
-					flowers -= number
-					break if flowers.negative?
+				while tmp_flower_counts >= number
+					tmp_flower_counts -= number
+					break if tmp_flower_counts.negative?
 					combinations.push(number)
 				end
-				return combinations if flowers == 0
+				return combinations if tmp_flower_counts == 0
 			end
 		end
 		[]

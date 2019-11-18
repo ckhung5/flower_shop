@@ -1,3 +1,5 @@
+require_relative "parser/json"
+require_relative "compute"
 require_relative "flower"
 require_relative "flower_type/roses"
 require_relative "flower_type/lilies"
