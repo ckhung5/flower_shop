@@ -5,10 +5,24 @@ module Compute
 		class << self
 			def calculate_order
 				order_hash = JsonParser.data
-				roses = Roses.new(order_hash["flowers"][Roses::CODE_NAME])
-				lilies = Lilies.new(order_hash["flowers"][Lilies::CODE_NAME])
-				tulips = Tulips.new(order_hash["flowers"][Tulips::CODE_NAME])
-				[roses, lilies, tulips].each(&:print_result)
+
+				flowers_object = order_hash["flowers"].map do |code, amount|
+					flower_object(amount, code)
+				end
+				flowers_object.each(&:print_result)
+			end
+
+			private
+
+			def flower_object(amount, code)
+				case code
+				when Roses::CODE_NAME
+					Roses.new(amount)
+				when Lilies::CODE_NAME
+					Lilies.new(amount)
+				when Tulips::CODE_NAME
+					Tulips.new(amount)
+				end
 			end
 		end
 	end

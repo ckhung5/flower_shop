@@ -7,7 +7,6 @@ class Lilies < Flower
 	BUNDLE_IN_NINE = {bundle_number: 9, cost: 24.95}
 	CODE_NAME = 'L09'
 
-
 	def code_name
 		CODE_NAME
 	end

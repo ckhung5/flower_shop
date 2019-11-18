@@ -7,7 +7,6 @@ class Flower
 	def initialize(order_number)
 		@order_number = order_number
 		@records = {}
-		@code_name = code_name
 	end
 
 	def calculate
