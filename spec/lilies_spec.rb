@@ -3,8 +3,8 @@
 RSpec.describe Lilies do
   describe '#initialize' do
     it 'should create a lily flower object with 12' do
-      expect(described_class.new(12).order_number).to eq 12
-      expect(described_class.new(12).code_name).to eq 'L09'
+      expect(described_class.new(12).number_of_item).to eq 12
+      expect(described_class.new(12).code).to eq 'L09'
     end
 
     describe '#calculate' do

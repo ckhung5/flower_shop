@@ -3,10 +3,11 @@
 class Roses < Flower
   BUNDLE_IN_FIVE = { bundle_number: 5, cost: 6.99 }.freeze
   BUNDLE_IN_TEN = { bundle_number: 10, cost: 12.99 }.freeze
-  CODE_NAME = 'R12'
+  CODE = 'R12'
 
-  def code_name
-    CODE_NAME
+  def initialize(number_of_item)
+    super
+    @code = CODE
   end
 
   private

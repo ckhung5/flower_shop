@@ -7,8 +7,8 @@ RSpec.describe Compute do
         {
           "orders": [
             {
-              "code_name": 'R12',
-              "order_number": 15,
+              "code": 'R12',
+              "number_of_item": 15,
               "total": '$19.98',
               "records": [
                 {
@@ -24,8 +24,8 @@ RSpec.describe Compute do
               ]
             },
             {
-              "code_name": 'L09',
-              "order_number": 15,
+              "code": 'L09',
+              "number_of_item": 15,
               "total": '$41.9',
               "records": [
                 {
@@ -41,8 +41,8 @@ RSpec.describe Compute do
               ]
             },
             {
-              "code_name": 'T58',
-              "order_number": 13,
+              "code": 'T58',
+              "number_of_item": 13,
               "total": '$25.85',
               "records": [
                 {

@@ -4,10 +4,11 @@ class Tulips < Flower
   BUNDLE_IN_THREE = { bundle_number: 3, cost: 5.95 }.freeze
   BUNDLE_IN_FIVE = { bundle_number: 5, cost: 9.95 }.freeze
   BUNDLE_IN_NINE = { bundle_number: 9, cost: 16.95 }.freeze
-  CODE_NAME = 'T58'
+  CODE = 'T58'
 
-  def code_name
-    CODE_NAME
+  def initialize(number_of_item)
+    super
+    @code = CODE
   end
 
   private

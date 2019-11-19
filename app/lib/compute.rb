@@ -20,11 +20,11 @@ module Compute
 
     def flower_object(amount, code)
       case code
-      when Roses::CODE_NAME
+      when Roses::CODE
         Roses.new(amount)
-      when Lilies::CODE_NAME
+      when Lilies::CODE
         Lilies.new(amount)
-      when Tulips::CODE_NAME
+      when Tulips::CODE
         Tulips.new(amount)
       end
     end

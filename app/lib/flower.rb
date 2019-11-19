@@ -1,16 +1,17 @@
 # frozen_string_literal: true
 
 class Flower
-  attr_accessor :order_number
-  attr_reader :records, :code_name, :total_bill
+  attr_accessor :number_of_item
+  attr_reader :records, :code, :total_bill
 
-  def initialize(order_number)
-    @order_number = order_number
+  def initialize(number_of_item)
+    @number_of_item = number_of_item
     @records = {}
+    @code = ''
   end
 
   def calculate
-    return 0 if order_number == 0
+    return 0 if number_of_item == 0
 
     combinations = possible_combinations
 
@@ -22,15 +23,11 @@ class Flower
   def generate_result
     total_bill = calculate
     {
-      code_name: code_name,
-      order_number: order_number,
+      code: code,
+      number_of_item: number_of_item,
       total: "$#{total_bill}",
       records: records_hash
     }
-  end
-
-  def code_name
-    ''
   end
 
   private
@@ -46,7 +43,7 @@ class Flower
   def possible_combinations
     bundles.sort.reverse.permutation(bundles.length).to_a.each do |permutation_array|
       combinations = []
-      tmp_flower_counts = order_number
+      tmp_flower_counts = number_of_item
 
       permutation_array.each do |number|
         while tmp_flower_counts >= number
