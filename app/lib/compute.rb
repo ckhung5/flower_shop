@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
-require_relative 'flower_shop'
-
 module Compute
   class << self
     def calculate_order
-      order_hash = JsonParser.data
+      order_hash = JsonParser.parse
 
       flowers_object = order_hash['flowers'].map do |code, amount|
         flower_object(amount, code)

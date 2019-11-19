@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
-require 'json'
-
 module JsonParser
-  def self.data
-    file = File.open 'input.json'
+	JSON_FILE = 'input.json'.freeze
+  def self.parse
+    file = File.open JSON_FILE
     JSON.load file
   end
 end
