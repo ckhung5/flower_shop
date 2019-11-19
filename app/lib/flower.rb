@@ -2,7 +2,7 @@
 
 class Flower
 	attr_accessor :order_number
-	attr_reader :records, :code_name
+	attr_reader :records, :code_name, :total_bill
 
 	def initialize(order_number)
 		@order_number = order_number
@@ -17,17 +17,14 @@ class Flower
 		total(combinations)
 	end
 
-	def print_result
-		calculatd_result = calculate
-		if calculatd_result.nil?
-			puts "The #{code_name} has only #{order_number} which can not make as a bundle"
-		else
-			puts "#{order_number} #{code_name} $#{calculatd_result}"
-			records.each do |bundle_number, count|
-				puts "#{count} X #{bundle_number} $#{get_price(bundle_number)}"
-			end
-		end
-		puts "--------------------------------------------------------"
+	def generate_result
+		total_bill = calculate
+		{
+			code_name: code_name,
+			order_number: order_number,
+			total: "$#{total_bill}",
+			records: records_hash
+		}
 	end
 
 	def code_name
@@ -35,6 +32,14 @@ class Flower
 	end
 
 	private
+
+	def records_hash
+		records_hash = []
+		records.each do |bundle_number, count|
+			records_hash << {flower_per_bundle: bundle_number, bundle_count: count, bundle_per_price: "$#{get_price(bundle_number)}"}
+		end
+		records_hash
+	end
 
 	def possible_combinations
 		bundles.sort.reverse.permutation(bundles.length).to_a.each do |permutation_array|
