@@ -8,18 +8,13 @@ RSpec.describe Compute do
           "orders": [
             {
               "code": 'R12',
-              "number_of_item": 15,
-              "total": '$19.98',
+              "number_of_item": 10,
+              "total": '$12.99',
               "records": [
                 {
                   "flower_per_bundle": 10,
                   "bundle_count": 1,
                   "bundle_per_price": '$12.99'
-                },
-                {
-                  "flower_per_bundle": 5,
-                  "bundle_count": 1,
-                  "bundle_per_price": '$6.99'
                 }
               ]
             },

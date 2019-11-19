@@ -9,5 +9,12 @@ RSpec.describe JsonParser do
     it 'should parse the file' do
       expect(described_class.parse).to eq expect_result
     end
+
+    context 'error format' do
+    	it 'should raise error' do
+    		allow(File).to receive(:open).and_raise("format error")
+    		expect{described_class.parse}.to raise_error("format error")
+    	end
+    end
   end
 end
